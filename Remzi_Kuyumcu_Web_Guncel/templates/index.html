@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head><title>Panel</title></head>
+<body>
+  <h2>Remzi Kuyumcu Panel</h2>
+  <p>Has Fiyatı: {{ has_f }} ₺</p>
+  <form method="post">
+    <label>Gram: <input name="gram" required></label><br>
+    <label>Milyem: <input name="milyem" value="916" required></label><br>
+    <label>Satış: <input name="satis" required></label><br>
+    <button type="submit">Hesapla</button>
+  </form>
+
+  {% if result %}
+    <h3>Sonuç</h3>
+    <p>Maliyet: {{ result.maliyet }} ₺</p>
+    <p>Kâr: {{ result.kar }} ₺</p>
+    {% if saved %}
+      <p><strong>Excel'e kaydedildi.</strong></p>
+    {% endif %}
+  {% endif %}
+</body>
+</html>
